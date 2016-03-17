@@ -1,0 +1,2 @@
+# Mac4MaterilsReserach
+用于第一性原理材料研究的Mac的配置笔记
