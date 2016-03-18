@@ -25,28 +25,27 @@
 
 	sudo scutil --set HostName yourhostname
 
->　　这只是个在Linux和windows下形成的习惯，如果我不改的话，firefox浏览器会显示"[用户名]位于[主机名]的Firefox",当主机名是一串意义不明朗或者不简洁的字母，我心中便会有如万只神兽奔腾。  
+>　　这只是个在Linux和windows下形成的习(qiangpo)惯(zheng)，如果不改的话，Firefox浏览器的同步账户就会显示"[用户名]位于[主机名]的Firefox"，当主机名是一串意义不明朗或者不简洁的字母，便会令人心生不爽。
 
 ##2. 安装Homebrew
 ###2.1 Xcode Command Line Tools
 
-　　首先安装苹果的基础开发环境，在终端输入一下指令后回车，输入密码回车后，有一个图形化的界面下载并安装，耐心等待安装完成即可。
+　　安装苹果的基础开发环境，在终端输入一下指令，输入密码确认后，弹出图形化的界面提醒下载并安装，耐心等待安装完成即可。
 
 	xcode-select --install
 	
 ###2.2 Homebrew
-　　正如前文所说，EI Capitan（酋长石）默认终端是不能走系统代理的，本笔记建立在你网络犀利的前提之上。  
-　　于是，安装homebrew的前提，就是必须网络能够**直接**能连上其安装命令的网址。在这个前提下，终端输入以下指令：
+　　EI Capitan（酋长石）默认终端是不能走系统代理的，因此，安装Homebrew（后简称brew）的前提，就是必须网络能够<font color="turquoise">**直接**</font>能连上其安装命令的网址。尝试在终端输入以下指令：
 
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-　　然而，实际上，你的网络可能有一下几种情形：  
+　　实际操作过程中网络可能碰到以下几种情形：  
 
 *  可以连接github，没问题。   
-*  不能连接github，试着安装，raw开头的网址未必连不上。
+*  不能连接github，试着安装brew，raw开头的网址未必连不上。
 *  试完确实终端确实提示装不上，默哀一会，找个能连上的网。  
 
-　　如果装不上homebrew，配置终端翻墙应该比找个网麻烦。
+　　如果装不上brew，配置终端翻墙应该比找个网麻烦。
 
 ##3. 配置终端Proxy
 ###3.1 安装Proxychains-ng
@@ -65,15 +64,26 @@
 ###3.3 修改Proxychains设置
 
 ##4. 配置终端与shell
-　　去iterm2官网上拖下新版
-brew install zsh
+###4.1 安装iTerm2
+
+　　去iTerm2官网[Download](https://www.iterm2.com/downloads.html)上拖下test release,再拖到/应用程序即可。
+
+###4.2 安装zsh
+
+	brew install zsh
+
 　　用编辑器打开/etc/shells，比如
 
 	sudo vim /etc/shells
 
-　　在末尾添加/usr/local/bin/zsh,保存关闭。 在终端中执行以下命令：
+　　按<font color="orange"> **i** </font>编辑，<font color="orange">**shift+g** </font>跳到文件末尾，在末尾添加：
+
+	/usr/local/bin/zsh
+
+　　保存关闭，<font color="orange">**Esc** </font>退出编辑模式，输入<font color="orange">**:wq** </font>回车。  
+　　在终端中执行以下命令：
 ##5. 启动loacte服务
-　　找文件的，非常快捷。
+　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
 	sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
