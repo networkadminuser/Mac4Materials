@@ -8,7 +8,7 @@
 　　终端配置采用zsh+iterm2，zsh的配置采用oh-my-zsh。  
 　　由于主要计算完成于学校的服务器，Ip限制导致ssh及ftp的连接较为麻烦，所以设置了本地ssh端口转发，现尚未完全实现自动化。
 
-* [终端的配置](/terminal/)
+* [终端的配置](/terminal.md/)
 * 本地ssh转发
 
 　　To do list
@@ -20,7 +20,7 @@
 　　Materials Project是一个在超级计算机上实现第一性原理的半自动计算的开源项目（当然，个人认为这个半自动是谦词，我就想问一句啥叫全自动，全自动洗衣机不用放衣服么？）。它包含了[一系列python函数库](https://github.com/materialsproject)，和一套[Web App](https://materialsproject.org/)。  
 　　本笔记中主要涉及本地python函数库的配置。  
 
-* [MP三剑客的安装及FireWorks初始化](mp_musketeers) 
+* [MP三剑客的安装及FireWorks初始化](mp_musketeers.md) 
 * Mpenv安装配置
 
 　　To do list
@@ -34,7 +34,7 @@
 　　接下来准备想办法把Materials Project里头的函数加到python的自动补全里头，还没有预估难度和时间。  
 　　再进一步，我想能不能给Dash里加上Materials Project的 documentation，我觉得我应该是想多了！
 
-* [emacs](/emacs/)  
+* [emacs](/emacs.md/)  
 * MacTex
 
 　　To do list
@@ -44,4 +44,4 @@
 - Dash-Materials Project
 
 ##影音工具
-　　[mpv](/media/)
+　　[mpv](/media.md/)
