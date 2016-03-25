@@ -7,7 +7,7 @@ pi_ftp_local_forwarding.exp
 	spawn ssh -L 8891:202.120.1.119:21 -p 222 zhuh@202.120.1.119
 	expect {
 	    "*yes/no" { send "yes\r"; exp_continue}
-	    "password:" { send "Zhyme2@2015\r"}
+	    "password:" { send "密码"}
 	}
 	interact {
 	timeout 600 { send " "}
