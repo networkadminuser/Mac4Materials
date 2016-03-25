@@ -57,7 +57,7 @@ export PATH=$HOME/VASP/vasp.5.4.1.05Feb16/bin:$PATH
 cd ~/admin_env/MPenv/;
 python setup.py develop
 ```
->注意！！不要直接运行`python ~/admin_env/MPenv/setup.py develop`,这样检测MPenv依旧是安装成功的，但是会导致以后环境路径出问题。
+>注意！！不要直接运行`python ~/admin_env/MPenv/setup.py develop`，这样检测MPenv依旧是安装成功的，但是会导致以后环境路径出问题。
 
 检查MPenv是否安装成功
 
@@ -108,7 +108,12 @@ mpenv --conda --https 环境名
 alias use_环境名='source activate ~/环境名/virtenv_环境名;后面不改动'
 alias use_none='source deactivate;后面不改动'
 ```
-使用`use_环境名`进入环境，`use_none`退出虚拟环境。
+退出保存后
+
+```sh
+source ~/.bashrc ~/.bashrc.ext
+```
+测试：使用`use_环境名`进入环境，`use_none`退出虚拟环境。
 
 #第三部分
 复制VASP\_PSP文件夹
@@ -116,7 +121,8 @@ alias use_none='source deactivate;后面不改动'
 ```sh
 scp -r umjzhh@202.120.58.229:/lustre/home/umjzhh/VASP_PSP ~/
 ```
-并在`.bashrc`中加上
+在`~/.bashrc.ext`你个人环境最后(`# MPenv 环境名 end--->`之前)，修改VASP_PSP路径，加上你个人的materials porject的api。
+>subdb_here是个自定义快捷命令，用途是当前目录建立submission\_db.yaml的软链接，可以酌情添加。
 
 ```sh
 alias subdb_here='ln -s ~/环境名/config/dbs/submission_db.yaml ./'
