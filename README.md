@@ -8,8 +8,10 @@
 　　终端配置采用zsh+iterm2，zsh的配置采用oh-my-zsh。  
 　　由于主要计算完成于学校的服务器，Ip限制导致ssh及ftp的连接较为麻烦，所以设置了本地ssh端口转发，现尚未完全实现自动化。
 
+* [软件管理器](homebrew.md)
 * [终端的配置](terminal.md)
 * [本地ssh转发](ssh_forward.md)
+* [配置翻墙-影梭](proxy-shaodowsocks.md)
 
 　　To do list
 
@@ -37,7 +39,7 @@
 　　再进一步，我想能不能给Dash里加上Materials Project的 documentation，我觉得我应该是想多了！
 
 * [emacs](emacs.md)  
-* MacTex
+* [MacTex](mactex.md)
 
 　　To do list
 

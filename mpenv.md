@@ -1,6 +1,6 @@
 #Mpenv安装配置(@SJTU'Pi)
 
->本笔记基于Mpenv的sjtu分支，仅适合用于在sjtu的Pi上进行MPenv的安装配置。
+>本笔记基于Mpenv的[sjtu分支](https://github.com/materialsproject/MPenv/tree/sjtu)，仅适合用于在sjtu的Pi上进行MPenv的安装配置。
 
 ##第一部分 安装管理员环境(admin_env)
 >注意：一个账户(也就是一个用户名下)只需新建一次管理员环境，在该用户名下，可以新建很多个人环境。安装前请咨询hongzhu老师，来确认你的账户下是否已经安装完成管理员环境。如果已经安装完毕，请直接进行第二部分最后一步，向hongzhu老师申请环境名。
@@ -96,10 +96,10 @@ source activate admin_env
 mpenv --conda --https 环境名
 ```
 >注意3:  
->安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`.bashrc.ext`你环境名所对应的内容，并重新尝试。
+>安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`~/.bashrc.ext`中你环境名所对应的内容，并重新尝试。
 
 等待成功，之后激活你的环境以测试：
->在此之前，看看你`.bashrc.ext`中是否包含类似`source ~/.bashrc.ext`
+>在此之前，看看你`~/.bashrc`中是否包含类似`source ~/.bashrc.ext`
 >否则请添加，并`source ~/.bashrc ~/.bashrc.ext`
 
 修改`~/.bashrc.ext`
@@ -129,3 +129,4 @@ alias subdb_here='ln -s ~/环境名/config/dbs/submission_db.yaml ./'
 export VASP_PSP_DIR=$HOME/VASP_PSP
 export MAPI_KEY="你的MPAPI"
 ```
+运行

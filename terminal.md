@@ -21,71 +21,68 @@
 
 ##1. 修改主机名
 
-　　这当然没什么卵用，请原谅我一生放荡不羁爱自由！
+　　注意：这一步真的没什么卵用，就是为了以后看着顺眼。
 
-	sudo scutil --set HostName yourhostname
+```sh
+sudo scutil --set HostName yourhostname
+```
 
->　　这只是个在Linux和windows下形成的习(qiangpo)惯(zheng)，如果不改的话，Firefox浏览器的同步账户就会显示"[用户名]位于[主机名]的Firefox"，当主机名是一串意义不明朗或者不简洁的字母，便会令人心生不爽。
-
-##2. 安装Homebrew
-###2.1 Xcode Command Line Tools
-
-　　安装苹果的基础开发环境，在终端输入一下指令，输入密码确认后，弹出图形化的界面提醒下载并安装，耐心等待安装完成即可。
-
-	xcode-select --install
-	
-###2.2 Homebrew
-　　EI Capitan（酋长石）默认终端是不能走系统代理的，因此，安装Homebrew（后简称brew）的前提，就是必须网络能够<font color="turquoise">**直接**</font>能连上其安装命令的网址。尝试在终端输入以下指令：
-
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-　　实际操作过程中网络可能碰到以下几种情形：  
-
-*  可以连接github，没问题。   
-*  不能连接github，试着安装brew，raw开头的网址未必连不上。
-*  试完确实终端确实提示装不上，默哀一会，找个能连上的网。  
-
-　　如果装不上brew，配置终端翻墙应该比找个网麻烦。
-
-##3. 配置终端Proxy
-###3.1 安装Proxychains-ng
+##2. 配置终端Proxy
+　　终端的翻墙必然以本地有翻墙手段为前提，关于shadows的配置见本笔记的
+###2.1 安装Proxychains-ng
 
 　　配置Proxychains-ng实现终端翻墙。  
 
-	brew install proxychains-ng  
-
-###3.2 关闭安全模式
+```sh
+brew install proxychains-ng  
+```
+###2.2 关闭安全模式
 
 　　但是，开机按住command+R，出现苹果后松开进入恢复模式。
-恢复模式下，终端下输入：
+恢复模式下，终端下执行：
 
-	csrutil enable --without debug
+```sh
+csrutil enable --without debug
+```
+###2.3 修改Proxychains设置
+　　修改`/etc/proxychains.conf`使proxychains-ng走你的代理设置，以影梭为例，将该文件最后改为：
 
-###3.3 修改Proxychains设置
+```
+socks5 127.0.0.1 1080
+```
+##3. 配置终端与shell
+###3.1 安装iTerm2
 
-##4. 配置终端与shell
-###4.1 安装iTerm2
+```sh
+brew cask install iterm2-beta
+```
 
-　　去iTerm2官网[Download](https://www.iterm2.com/downloads.html)上拖下test release,再拖到/应用程序即可。
-
-###4.2 安装zsh
-
-	brew install zsh
-
+###3.2 安装zsh
+```sh
+brew install zsh
+```
 　　用编辑器打开/etc/shells，比如
 
-	sudo vim /etc/shells
-
+```sh
+sudo vim /etc/shells
+```
 　　按<font color="orange"> **i** </font>编辑，<font color="orange">**shift+g** </font>跳到文件末尾，在末尾添加：
 
-	/usr/local/bin/zsh
-
+```sh
+/usr/local/bin/zsh
+```
 　　保存关闭，<font color="orange">**Esc** </font>退出编辑模式，输入<font color="orange">**:wq** </font>回车。  
-　　在终端中执行以下命令：
+　　在终端中执行：
+
+```sh
+chsh -s /usr/local/bin/zsh
+```
+##4. 配置oh-my-zsh
 ##5. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
-	sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
-
+```sh
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+```
 
 
