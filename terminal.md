@@ -21,14 +21,14 @@
 
 ##1. 修改主机名
 
-　　注意：这一步真的没什么卵用，就是为了以后看着顺眼。
+>这一步真的没什么卵用，就是为了以后看着顺眼。
 
 ```sh
 sudo scutil --set HostName yourhostname
 ```
 
 ##2. 配置终端Proxy
-　　终端的翻墙必然以本地有翻墙手段为前提，关于shadows的配置见本笔记的
+　　终端的翻墙以本地有翻墙手段为前提，关于shadows的配置见本笔记的[配置翻墙-影梭](proxy-shaodowsocks.md)
 ###2.1 安装Proxychains-ng
 
 　　配置Proxychains-ng实现终端翻墙。  
@@ -77,7 +77,8 @@ sudo vim /etc/shells
 ```sh
 chsh -s /usr/local/bin/zsh
 ```
-##4. 配置oh-my-zsh
+##4. 安装oh-my-zsh
+
 ##5. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
