@@ -99,7 +99,7 @@ mpenv --conda --https 环境名
 >安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`~/.bashrc.ext`中你环境名所对应的内容，并重新尝试。
 
 等待成功，之后：  
-修改`.bashrc`:
+修改`.bashrc`,添加：
 
 ```sh
 source ~/.bashrc.ext
