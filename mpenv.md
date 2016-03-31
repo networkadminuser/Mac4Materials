@@ -19,7 +19,7 @@ cd ~;
 mkdir ~/admin_env;
 conda create --name admin_env numpy scipy matplotlib
 ```
-激活管理员环境
+　　激活管理员环境
 
 ```sh
 source activate admin_env
@@ -42,16 +42,16 @@ scp -r umjzhh@202.120.58.229:/lustre/home/umjzhh/keliu/VASP_unpacked/vasp.5.4.1.
 ```sh
 vim ~/admin_env/MPenv/MPenv/mpenv_static/BASH_template.txt
 ```
-修改VASP路径：
+　　修改VASP路径：
 >  
 
 ```sh
 export PATH=$HOME/VASP/vasp.5.4.1.05Feb16/bin:$PATH
 ```
-保存 BASH\_template.txt。 
+　　保存 BASH\_template.txt。 
 >export ':'的前后位置，决定了目录插在$PATH的前后，也就决定了搜索的先后顺序。  
 
-安装Mpenv:
+　　安装Mpenv:
 
 ```sh
 cd ~/admin_env/MPenv/;
@@ -59,22 +59,22 @@ python setup.py develop
 ```
 >注意！！不要直接运行`python ~/admin_env/MPenv/setup.py develop`，这样检测MPenv依旧是安装成功的，但是会导致以后环境路径出问题。
 
-检查MPenv是否安装成功
+　　检查MPenv是否安装成功
 
 ```sh
 which mpenv
 ```
-如果出现`~/.conda/envs/admin_env/bin/mpenv`说明安装成功。
+　　如果出现`~/.conda/envs/admin_env/bin/mpenv`说明安装成功。
 #第二部分 在Pi上安装自己的虚拟环境
 ##1. 申请自己的环境名称
-向hongzhu老师申请你个人的环境名称。
+　　向hongzhu老师申请你个人的环境名称。
 ##2. 上传并解压压缩包
-当你收到名为“环境名_files.tar.gz”的压缩包，即可在本地通过`scp`命令将其传至你在Pi的`$HOME`目录，(默认下载到了`~/Downloads`)。
+　　当你收到名为“环境名_files.tar.gz”的压缩包，即可在本地通过`scp`命令将其传至你在Pi的`$HOME`目录，(默认下载到了`~/Downloads`)。
 
 ```sh
 scp ~/Downloads/压缩包名 Pi用户名@Pi主机Host:~
 ```
-登陆Pi，解压：
+　　登陆Pi，解压：
 
 ```sh
 tar -xvzf 环境名_files.tar.gz
@@ -98,8 +98,8 @@ mpenv --conda --https 环境名
 >注意3:  
 >安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`~/.bashrc.ext`中你环境名所对应的内容，并重新尝试。
 
-等待成功，之后：  
-修改`.bashrc`,添加：
+　　等待成功，之后：  
+　　修改`.bashrc`,添加：
 
 ```sh
 source ~/.bashrc.ext
@@ -112,26 +112,26 @@ module load icc/default
 module load impi/default
 ```
 
-修改`~/.bashrc.ext`
+　　修改`~/.bashrc.ext`
 
 ```sh
 alias use_环境名='source activate ~/环境名/virtenv_环境名;后面不改动'
 alias use_none='source deactivate;后面不改动'
 ```
-退出保存后
+　　退出保存后
 
 ```sh
 source ~/.bashrc ~/.bashrc.ext
 ```
-测试：使用`use_环境名`进入环境，`use_none`退出虚拟环境。
+　　测试：使用`use_环境名`进入虚拟环境，`use_none`退出虚拟环境。
 
 #第三部分
-复制VASP\_PSP文件夹
+　　复制VASP\_PSP文件夹:
 
 ```sh
 scp -r umjzhh@202.120.58.229:/lustre/home/umjzhh/VASP_PSP ~/
 ```
-在`~/.bashrc.ext`你个人环境最后(`# MPenv 环境名 end--->`之前)，修改VASP_PSP路径，加上你个人的materials porject的api。
+　　在`~/.bashrc.ext`你个人环境最后(`# MPenv 环境名 end--->`之前)，修改VASP_PSP路径，加上你个人的materials porject的api。
 >subdb_here是个自定义快捷命令，用途是当前目录建立submission\_db.yaml的软链接，可以酌情添加。
 
 ```sh
@@ -139,4 +139,22 @@ alias subdb_here='ln -s ~/环境名/config/dbs/submission_db.yaml ./'
 export VASP_PSP_DIR=$HOME/VASP_PSP
 export MAPI_KEY="你的MPAPI"
 ```
-运行
+　　每次修改完`.bashrc.ext`,都因该重新载入一下，让设置生效：
+
+```sh
+source  ~/.bashrc.ext
+```
+#卸载
+　　如个人环境遇到问题需要重装，只需要删除环境文件夹，并清空`~/.bashrc.ext`个人设置即可。如发现管理员环境应该重装，应再删除`.conda`。
+## 卸载个人环境
+　　删除自己环境的文件夹，运行：
+
+```sh
+rm -rf ~/环境名
+```
+　　再删除`~/.bashrc.ext`中`# <---MPenv 环境名`到`# MPenv kl_me2 end--->`之间的部分即可。
+## 卸载管理员环境
+　　除了删除`admin_env`以外，还应该删除`.conda`
+```sh
+rm -rf ~/admin_env ~/.conda
+```
