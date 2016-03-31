@@ -98,9 +98,19 @@ mpenv --conda --https 环境名
 >注意3:  
 >安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`~/.bashrc.ext`中你环境名所对应的内容，并重新尝试。
 
-等待成功，之后激活你的环境以测试：
->在此之前，看看你`~/.bashrc`中是否包含类似`source ~/.bashrc.ext`
->否则请添加，并`source ~/.bashrc ~/.bashrc.ext`
+等待成功，之后：  
+修改`.bashrc`:
+
+```sh
+source ~/.bashrc.ext
+source /lustre/utility/lsf/conf/profile.lsf
+export MODULEPATH=/lustre/utility/modulefiles:$MODULEPATH
+
+#module purge
+module load mkl/default
+module load icc/default
+module load impi/default
+```
 
 修改`~/.bashrc.ext`
 
