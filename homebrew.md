@@ -24,10 +24,13 @@ brew search			寻找软件包(包含caks等)
 brew list			显示已装软件包(不包含cask等)
 brew info			显示安装包信息
 brew doctor			修复系统使homebrew正常工作
+brew cleanup		brew清理
 brew cask install	cask安装软件包
 brew cask remove	cask卸载软件包
 brew cask list		显示cask软件包
 brew cask cleanup	清理cask下载的临时文件
+brew cask list | xargs brew cask install --force
+					升级cask软件
 ```
 ##3. Homebrew-cask常用软件
 　　由于Homebrew本身安装的软件大多需要配置，如emacs或者mpv等，会单独列出，而Homebrew-cask装的软件大多无需配置，因此将本人现在cask软件列在下方，如需要配置，也会在后面单独列出。
