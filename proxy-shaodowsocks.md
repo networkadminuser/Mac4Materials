@@ -18,7 +18,7 @@ brew cask install shadowsocksx
 　　建议不要重点配置浏览器翻墙规则，我对浏览器插件的定位是，切换不同的翻墙模式，GFW-list以外的规则还是在user-rule里头写上比较好。
 ##3. 影梭用户规则
 　　shadowsocksX菜单上就有编辑用户规则的选项，点选后`user-rule.txt`即用户规则。为了让用户规则同步，最好将其放到云存储中，再建立软链接，一劳永逸。
-(以我的Dropbox为例，位于`~/Dropbox`)
+(以我的Dropbox为例，位于`~/Documents/Dropbox`)
 
 ```sh
 mkdir -p ~/Documents/Dropbox/应用/shadowsocks
@@ -30,10 +30,38 @@ ln -s ~/Documents/Dropbox/应用/shadowsocks/user-rule.txt ~/.ShadowsocksX
 ```
 ! Put user rules line by line in this file.
 ! See https://adblockplus.org/en/filter-cheatsheet
+
 #国内电商
-@@||taobao.com/^
-@@||jd.com/^
-#github
-||github.com/^
-||raw.githubusercontent.com/^
+@@||taobao.com
+@@||jd.com
+
+#科研
+@@||webofknowledge.com
+
+#开发
+||github.com
+||raw.githubusercontent.com
+||atom.io
+||xda-developers.com
+
+#云存储
+||dropbox.com
+||dropboxusercontent.com
+||dropboxstatic.com
+
+#翻墙
+||digitalocean.com
+
+#论坛
+||v2ex.com
+
+#edu
+||dspace.mit.edu
+```
+
+##4. app的启动
+　　如果有app需要翻墙启动，并且shadowsocks的全局模式不好使的话，需要这样利用proxychains-ng启动app,以Dropbox为例：
+
+```sh
+proxychains4 open /opt/homebrew-cask/Caskroom/dropbox/latest/Dropbox.app
 ```
