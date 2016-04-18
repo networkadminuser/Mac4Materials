@@ -150,6 +150,18 @@ vim ~/环境名/config/config_SjtuPi/my_qadapter.yaml
 ```sh
 rocket_launch: rlaunch -c /lustre/home/umjzhh-1/kl_me2/config/config_SjtuPi singleshot
 ```
+
+###6.修改`wf_settings.py`
+```sh
+vim ~/kl_me2/codes/MPWorks/mpworks/workflows/wf_settings.py
+```
+其中将对应行修改为
+
+```python
+QA_VASP = {'nnodes': 2}
+QA_VASP_SMALL = {'nnodes': 2, 'walltime': '24:00:00'}  # small walltime jobs
+```
+
 ##第三部分
 　　复制VASP\_PSP文件夹:
 
