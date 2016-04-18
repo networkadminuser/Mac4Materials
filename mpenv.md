@@ -129,7 +129,8 @@ mpenv --conda --https 环境名
 >注意3:  
 >安装期间，因各种原因终止，则删除`~/环境名`文件夹，并清空`~/.bashrc.ext`中你环境名所对应的内容，并重新尝试。
 
-　　等待成功，之后修改`~/.bashrc.ext`
+###5. 修改源码以匹配pi的设定
+####5.1 修改`~/.bashrc.ext`
 
 ```sh
 alias use_环境名='source activate ~/环境名/virtenv_环境名;后面不改动'
@@ -141,7 +142,7 @@ alias use_none='source deactivate;后面不改动'
 source ~/.bashrc
 ```
 　　测试：使用`use_环境名`进入虚拟环境，`use_none`退出虚拟环境。
-###5.修改`my_qadapter.yaml`
+####5.2 修改`my_qadapter.yaml`
 ```sh
 vim ~/环境名/config/config_SjtuPi/my_qadapter.yaml
 ```
@@ -151,9 +152,9 @@ vim ~/环境名/config/config_SjtuPi/my_qadapter.yaml
 rocket_launch: rlaunch -c /lustre/home/umjzhh-1/kl_me2/config/config_SjtuPi singleshot
 ```
 
-###6.修改`wf_settings.py`
+###5.3 修改`wf_settings.py`
 ```sh
-vim ~/kl_me2/codes/MPWorks/mpworks/workflows/wf_settings.py
+vim ~/环境名/codes/MPWorks/mpworks/workflows/wf_settings.py
 ```
 其中将对应行修改为
 
