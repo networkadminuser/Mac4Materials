@@ -1,12 +1,11 @@
 #终端配置
 
-　　本笔记的终端配置大体包括，安装iterm2+zsh，用oh-my-zsh配置美化。配置结束后能获得一个美观方便可翻墙的终端环境，然而，这些都并不是必须的，你可以用默认的终端默认的shell，但是强烈建议你阅读以下注意事项再做决定。
+　　本笔记的终端配置大体包括，安装iterm2+fish，用oh-my-fish配置美化。配置结束后能获得一个美观方便可翻墙的终端环境，然而，这些都并不是必须的，你可以用默认的终端默认的shell，但是强烈建议你阅读以下注意事项再做决定。
 
-* 关于zsh 
+* 关于fish 
 
->　　zsh是一个极其强大的shell，无论是改变shell一成不变的配色，或者是丰富提示行内容，更不要说其卓越的纠错补全能力，都使得千万coder爱不释手。不过，最终使用与否在自己。  
-　　如果没有安装zsh，那么笔记之后的内容与Mac默认的bash配置起来可能会有出入，因为之后的配置都是在zsh中进行的。  
-　　假如安装了zsh却没配置，那么还不如不装。
+>　　fish脱胎于zsh，是一个极其强大的shell，无论是改变shell一成不变的配色，或者是丰富提示行内容，更不要说其卓越的纠错补全能力，都使得千万coder爱不释手。不过，最终使用与否在自己。  
+　　如果没有安装fish，那么笔记之后的内容与Mac默认的bash配置起来可能会有出入，因为之后的配置都是在fish中进行的。  
 
 * 关于iterm2
 
@@ -57,9 +56,9 @@ socks5 127.0.0.1 1080
 brew cask install iterm2-beta
 ```
 
-###3.2 安装zsh
+###3.2 安装fish
 ```sh
-brew install zsh
+brew install fish
 ```
 　　用编辑器打开/etc/shells，比如
 
@@ -69,16 +68,18 @@ sudo vim /etc/shells
 　　按<font color="orange"> **i** </font>编辑，<font color="orange">**shift+g** </font>跳到文件末尾，在末尾添加：
 
 ```sh
-/usr/local/bin/zsh
+/usr/local/bin/fish
 ```
 　　保存关闭，<font color="orange">**Esc** </font>退出编辑模式，输入<font color="orange">**:wq** </font>回车。  
 　　在终端中执行：
 
 ```sh
-chsh -s /usr/local/bin/zsh
+chsh -s /usr/local/bin/fish
 ```
-##4. 安装oh-my-zsh
-
+##4. 安装oh-my-fish
+```sh
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+```
 ##5. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
