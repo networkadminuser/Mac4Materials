@@ -8,7 +8,7 @@ brew cask install mactex
 　　参考[官方文档](https://tug.org/mactex/UpdatingForElCapitan.pdf)修改各个软件path，第一次更新Tex Live Utility需要翻墙，建议更新在终端中进行：
 
 ```sh
-tlmfr update --self --all
+sudo tlmgr update --self --all
 ```
 　　本人第一次在Tex Live Utility中进行更新，未备份，一下占用30G，原因不明，而且卸载MacTex非常麻烦。
 ##2. 安装auctex
