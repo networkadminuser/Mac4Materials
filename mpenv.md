@@ -219,7 +219,7 @@ source  ~/.bashrc
 ```sh
 cp ~/.bashrc.ext{,.bak};
 > ~/.bashrc.ext;
-rm -rf ~/环境名；
+rm -rf ~/环境名;
 ```
 
 ## 卸载管理员环境
