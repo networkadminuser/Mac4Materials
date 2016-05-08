@@ -37,9 +37,10 @@ pip install pymatgen custodian fireworks
 ```sh
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
 ```
-　　升级pip本身：
+　　升级pip本身(注意顺序不可改)：
 
 ```sh
-pip install --upgrade pip setuptools
+pip3 install --upgrade pip setuptools;
+pip2 install --upgrade pip setuptools
 ```
 ##3. FireWorks数据库的初始化

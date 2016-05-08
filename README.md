@@ -19,8 +19,8 @@
 - alias设置
 
 ## MP环境
-　　Materials Project是一个在超级计算机上实现第一性原理的半自动计算的开源项目（当然，个人认为这个半自动是谦词，我就想问一句啥叫全自动，全自动洗衣机不用放衣服么？）。它包含了[一系列python函数库](https://github.com/materialsproject)，和一套[Web App](https://materialsproject.org/)。  
-　　本笔记中主要涉及python函数库的配置。
+　　Materials Project是一个在超级计算机上实现第一性原理的半自动计算的开源项目（当然，个人认为这个半自动是谦词，我就想问一句啥叫全自动，全自动洗衣机不用放衣服么？）。它包含了[一系列python函数库](https://github.com/materialsproject)，和一套[Web App及API](https://materialsproject.org/)。  
+　　本笔记中主要涉及本地python函数库的配置。
 
 * [MP三剑客的安装及FireWorks初始化](mp_musketeers.md)
 * pymatgen
