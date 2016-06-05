@@ -1,4 +1,4 @@
-#DigitalOcean影梭的配置
+# DigitalOcean影梭的配置
 
 ## 注册验证
 注册DigitalOcean，至少充5美金激活，支持paypal不支持Alipay.
@@ -28,6 +28,7 @@ vim /etc/shadowsocks.json
   "method":"rc4-md5"
 }
 ```
+
 ```vim
 :wq #保存
 ```

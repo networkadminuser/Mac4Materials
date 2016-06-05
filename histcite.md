@@ -1,5 +1,5 @@
-#HistCite
-##1. 安装
+# HistCite
+## 1. 安装
 ```sh
 brew cask install xquartz
 brew install wine --devel

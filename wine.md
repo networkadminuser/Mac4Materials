@@ -1,4 +1,4 @@
-##1. 安装
+## 1. 安装
 ```sh
 brew cask install xquartz
 brew install wine --devel

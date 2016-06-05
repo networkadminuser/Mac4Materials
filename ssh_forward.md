@@ -1,8 +1,8 @@
-#Ssh本地转发(尚未自动)
-##1. Expect脚本
+# Ssh本地转发(尚未自动)
+## 1. Expect脚本
 pi\_ssh\_local\_forwarding.exp
 
-```
+```sh
 #!/usr/bin/env expect -f
 set localPort	your_local_port
 set targetHost	target_server_ip
@@ -20,7 +20,7 @@ expect {
 interact
 #expect eof
 ```
-##2. plist
+## 2. plist
 
 splist
 

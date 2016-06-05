@@ -1,5 +1,5 @@
-#MP三剑客的安装及FireWorks初始化
-##1. Brew安装python
+# MP三剑客的安装及FireWorks初始化
+## 1. Brew安装python
 　　用brew安装python和python3
 
 ```sh
@@ -35,7 +35,8 @@ pip install pymatgen custodian fireworks
 　　pip没有内置升级所有包的命令，可以使用以下命令升级全部：
 
 ```sh
-pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
+pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U;
+pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip install -U
 ```
 　　升级pip本身(注意顺序不可改)：
 
@@ -43,4 +44,4 @@ pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
 pip3 install --upgrade pip setuptools;
 pip2 install --upgrade pip setuptools
 ```
-##3. FireWorks数据库的初始化
+## 3. FireWorks数据库的初始化

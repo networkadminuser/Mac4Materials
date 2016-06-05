@@ -1,24 +1,8 @@
-#终端配置
+# 终端配置
 
-　　本笔记的终端配置大体包括，安装iterm2+fish，用oh-my-fish配置美化。配置结束后能获得一个美观方便可翻墙的终端环境，然而，这些都并不是必须的，你可以用默认的终端默认的shell，但是强烈建议你阅读以下注意事项再做决定。
+　　本笔记的终端配置大体包括，安装iterm2+fish(或zsh)，用oh-my-fish(oh-my-zsh)配置美化。配置结束后能获得一个美观方便可翻墙的终端环境，然而，这些都并不是必须的，你可以用默认的终端默认的shell。
 
-* 关于fish 
-
->　　fish脱胎于zsh，是一个极其强大的shell，无论是改变shell一成不变的配色，或者是丰富提示行内容，更不要说其卓越的纠错补全能力，都使得千万coder爱不释手。不过，最终使用与否在自己。  
-　　如果没有安装fish，那么笔记之后的内容与Mac默认的bash配置起来可能会有出入，因为之后的配置都是在fish中进行的。  
-
-* 关于iterm2
-
->　　iterm2是一个强大的终端，配色绚丽，多窗口...恕我玩得不转编不下去了。  
-　　然而如果不iterm2的话——并没有什么影响。
-
-* 关于翻墙 
-
->　　如果不翻墙，你懂的。  
-　　如果当前Mac是EI Capitan之前的版本，那么终端翻墙根本不是什么事。  
-　　但是EI Capitan（酋长石）的安全等级非常高，导致proxychains-ng都无法让终端翻墙，需要关闭一下Mac的安全设置。
-
-##1. 修改主机名
+## 1. 修改主机名
 
 >这一步真的没什么卵用，就是为了以后看着顺眼。
 
@@ -26,16 +10,16 @@
 sudo scutil --set HostName yourhostname
 ```
 
-##2. 配置终端Proxy
+## 2. 配置终端Proxy
 　　终端的翻墙以本地有翻墙手段为前提，关于shadows的配置见本笔记的[配置翻墙-影梭](proxy-shaodowsocks.md)
-###2.1 安装Proxychains-ng
+### 2.1 安装Proxychains-ng
 
 　　配置Proxychains-ng实现终端翻墙。  
 
 ```sh
 brew install proxychains-ng  
 ```
-###2.2 关闭安全模式
+### 2.2 关闭安全模式
 
 　　但是，开机按住command+R，出现苹果后松开进入恢复模式。
 恢复模式下，终端下执行：
@@ -43,20 +27,21 @@ brew install proxychains-ng
 ```sh
 csrutil enable --without debug
 ```
-###2.3 修改Proxychains设置
+### 2.3 修改Proxychains设置
 　　修改`/etc/proxychains.conf`使proxychains-ng走你的代理设置，以影梭为例，将该文件最后改为：
 
 ```
 socks5 127.0.0.1 1080
 ```
-##3. 配置终端与shell
-###3.1 安装iTerm2
+## 3. 配置终端与shell
+### 3.1 安装iTerm2
 
 ```sh
 brew cask install iterm2-beta
 ```
 
-###3.2 安装fish
+### 3.2 安装fish/zsh
+zsh的安装把相应的`fish`换为`zsh`即可。
 ```sh
 brew install fish
 ```
@@ -65,26 +50,29 @@ brew install fish
 ```sh
 sudo vim /etc/shells
 ```
-　　按<font color="orange"> **i** </font>编辑，<font color="orange">**shift+g** </font>跳到文件末尾，在末尾添加：
+　　按 **i** 编辑，**shift+g** 跳到文件末尾，在末尾添加：
 
 ```sh
 /usr/local/bin/fish
 ```
-　　保存关闭，<font color="orange">**Esc** </font>退出编辑模式，输入<font color="orange">**:wq** </font>回车。  
+　　保存关闭，**Esc** 退出编辑模式，输入>`:wq`回车。  
 　　在终端中执行：
 
 ```sh
 chsh -s /usr/local/bin/fish
 ```
-##4. 安装oh-my-fish
+## 4. 安装oh-my-fish/oh-my-zsh
+[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 ```sh
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 ```
-##5. 启动loacte服务
+[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+## 5. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
 ```sh
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 ```
-
-
