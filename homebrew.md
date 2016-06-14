@@ -52,14 +52,16 @@ microsoft-office	# 微软office
 mactex				# mac下Latex宏包
 atom				# 神编辑器不解释
 skim				# pdf阅读器
-diffmerge			# 比较文件夹、文件内容
 
 # 同步云盘
 dropbox				# dropbox客户端 
-baiducloud			# 国产毒瘤，没有bcould,实属无奈 
 
 # 其他
 steam				# 放弃解释
 zotero				# 文献管理
-sogouinput			# 比百度输入法好，知乎水军骗我
+```
+## 4.Homebrew-cask 重新安装
+
+```sh
+brew uninstall --force brew-cask; brew untap phinze/cask; brew update; brew cleanup; brew cask cleanup
 ```
