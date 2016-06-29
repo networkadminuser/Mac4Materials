@@ -70,7 +70,13 @@ curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-## 5. 启动loacte服务
+
+## 5. 设置语言环境变量
+for fish `vim ~/.config/omf/init.fish`
+```
+set -g -x LANG en_GB.utf8
+```
+## 6. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
 
 ```sh
