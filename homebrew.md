@@ -39,9 +39,29 @@ brew cask list | xargs brew cask install --force
 # 系统必备
 alfred				# 神器不解释
 iterm2-beta			# 强大终端
+squirrel			# 鼠须管，神级输入法
 mounty				# 挂载ntfs格式U盘、硬盘
 cleanmymac			# 卸载软件，清理垃圾
 flash				# 浏览器flash插件
+
+
+# Mac Plus
+rcdefaultapp		# 设定文件/链接默认打开方式
+dictunifier			# 转化其他词典为Mac内置格式
+scroll-reverser		# 可以设置鼠标滚轮反向
+qlcolorcode			# 预览(preview)高亮支持
+qlmarkdown			# preview markdown支持
+quicklook-csv		# preview csv支持
+quicklook-json		# preview json支持
+
+# 开发工具
+atom				# 神编辑器不解释
+beyond-compare		# 代码比较
+robomongo			# MongoDB客户端
+filezilla			# FTP免费客户端
+xquartz				# X11支持
+mactex				# mac下Latex宏包
+detexify			# Latex神器，手画匹配latex代码
 
 # 翻墙浏览
 shadowsocksx		# 影梭客户端
@@ -49,9 +69,8 @@ google-chrome-dev	# chrome浏览器
 
 # 编辑阅读
 microsoft-office	# 微软office
-mactex				# mac下Latex宏包
-atom				# 神编辑器不解释
 skim				# pdf阅读器
+calibre				# 转格式, kindle好帮手
 
 # 同步云盘
 dropbox				# dropbox客户端 
@@ -59,6 +78,11 @@ dropbox				# dropbox客户端
 # 其他
 steam				# 放弃解释
 zotero				# 文献管理
+upeditor			# 中银safari插件
+
+# 中国特色
+thunder				# 下不动，你就开会员
+aliwangwang			# 剁手初段
 ```
 ## 4.Homebrew-cask 重新安装
 

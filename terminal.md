@@ -72,9 +72,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ```
 
 ## 5. 设置语言环境变量
+> 当系统环境为英语时很有必要
+
 for fish `vim ~/.config/omf/init.fish`
 ```
 set -g -x LANG en_GB.utf8
+set -g -x  LC_ALL en_GB.UTF-8
+```
+for zsh `vim ~/.zshrc`
+for bash `vim ~/.bash_profile`
+```
+export LANG=en_GB.utf8
+export LC_ALL=en_GB.UTF-8
 ```
 ## 6. 启动loacte服务
 　　终端下找文件命令，启用并重启后，locate '文件名'就能迅速找到文件。
