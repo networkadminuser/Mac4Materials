@@ -77,7 +77,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 for fish `vim ~/.config/omf/init.fish`
 ```
 set -g -x LANG en_GB.utf8
-set -g -x  LC_ALL en_GB.UTF-8
+set -g -x LC_ALL en_GB.UTF-8
 ```
 for zsh `vim ~/.zshrc`
 for bash `vim ~/.bash_profile`
