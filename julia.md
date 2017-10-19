@@ -9,10 +9,10 @@ brew install julia
 　　Pkg就是Julia的函数包，julia是内置函数包管理器的。函数包的一般管理命令为：
 
 ```julia
-Pkg.add("name_of_Pkg")	#安装Pkg
-Pkg.rm("name_of_Pkg")	#卸载Pkg
-Pkg.update()			#升级所有Pkg
-Pkg.stats()				#列出安装包及依赖版本
+Pkg.add("name_of_Pkg")	# 安装Pkg
+Pkg.rm("name_of_Pkg")	# 卸载Pkg
+Pkg.update()			# 升级所有Pkg
+Pkg.stats()				# 列出安装包及依赖版本
 ```
 　　一般来说，建议在安装之前运行`Pkg.update()`，再执行安装。
 ## 2.1 Mongo
